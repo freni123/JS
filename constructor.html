@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor</title>
+</head>
+<body>
+    <h1>Javscript constructor</h1>
+    <script>
+       //constructor function
+        function Student(first,last,age,cls){
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.class = cls;
+            this.getFullName = function(){
+                return this.firstName + " " + this.lastName;
+            }
+        }
+        // first new object add
+        var student1 = new Student("ajeet","kumar",25,5);
+        //access properties
+        console.log(student1);
+        console.log('fullname:' ,student1.getFullName()); //return fullname
+        
+        //second new object add
+        var student2 = new Student("mina","patel",26,4);
+        console.log(student2);
+        document.write('fullname:', student2.getFullName());//return fullname
+        
+        //Add nationality to second object 
+         student1.nationality="Indian";
+         console.log('nationality:' ,student1.nationality);
+
+         //set value
+         const Studentinfo={
+            first:"Tina",
+            last:"No",
+            age:"25",
+            language:"No",
+            gender:"female",
+            set lang(value){
+                console.log(value);
+                this.language = value;
+            }
+        };
+        Studentinfo.lang="gujrati";
+        console.log(Studentinfo);
+    </script>
+</body>
+</html>
